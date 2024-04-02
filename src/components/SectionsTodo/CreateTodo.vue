@@ -21,7 +21,26 @@
             <input type="submit" value="Add Tarefa">
         </form>
     </section>
-    {{ this.todos }}
+
+    <section class="todo-list">
+          <h3>Seus Compromissos</h3>
+          <div class="list">
+              <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
+                  <label>
+                      <input type="checkbox" v-model="todo.done">
+                      <span :class="`bubble ${todo.category}`"></span>
+                  </label>
+
+                  <div class="todo-content">
+                      <input type="text" v-model="todo.content">
+                  </div>
+
+                  <div class="actions">
+                      <button class="delete" @click="removeTodo">Apagar</button>
+                  </div>
+              </div>
+          </div>
+      </section>
 </template>
 
 <script>
@@ -48,6 +67,9 @@
                     })
                     this.input_content = ''
                 }
+            },
+            todos_asc(){
+                console.log('chegou aqui')
             }
         }, 
         watch: {
@@ -59,6 +81,12 @@
         },
         mounted(){
             this.todos = JSON.parse(localStorage.getItem('todos')) || []
+        }, 
+        computed:{
+            todos_asc(){
+                
+            }
         }
     }
 </script>
+
