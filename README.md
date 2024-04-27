@@ -13,8 +13,3 @@
 
 ## Preview
 ![preview vuelist](https://github.com/Maria-Padilha/NewVueList/assets/109801423/560b2f23-e235-4b18-a6fa-3f3b0971249f)
-
-💻
-<a href="https://maria-padilha.github.io/NewVueList/">Visite a página</a>
-
-<br>
